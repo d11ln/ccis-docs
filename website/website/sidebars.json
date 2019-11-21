@@ -1,7 +1,7 @@
 {
   "docs": {
-    "Setup": ["doc1"],
-    "Customization": ["doc2"],
+    "Setup": ["setup"],
+    "First Category": ["doc2"],
     "Second Category": ["doc3"]
   },
   "docs-other": {
