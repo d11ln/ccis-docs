@@ -46,7 +46,7 @@ npm i
 You'll want to watch for any warnings in the cli, any references to missing dependencies means that you'll have to install those yourself, for example: 
 
 ```
-npm WARN @ant-design/icons-react@1.1.2 requires a peer dependency of @and-design/icons but none is installed. You must install peer dependencies yourself. 
+npm WARN @ant-design/icons-react@1.1.2 requires a peer dependency of @ant-design/icons but none is installed. You must install peer dependencies yourself. 
 ```
 In the event that you come across any of these that hinder the installation or rendering of the app, simply run: `npm i` followed by the relevant dependencies as pointed out by the warnings.
 
