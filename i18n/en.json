@@ -13,10 +13,11 @@
         "title": "Customise the app"
       },
       "doc3": {
-        "title": "Branding"
+        "title": "Branding",
+        "sidebar_label": "branding"
       },
       "doc4": {
-        "title": "Credentials"
+        "title": "Other Document"
       },
       "doc5": {
         "title": "Fifth Document"
@@ -25,8 +26,7 @@
     "links": {
       "Docs": "Docs",
       "API": "API",
-      "Dependencies": "Dependencies",
-      "Changelog": "Changelog"
+      "Dependencies": "Dependencies"
     },
     "categories": {
       "Setup": "Setup",

@@ -35,7 +35,7 @@ Size: up to 10GB per database, times 10 contributing systems - allow for 100GB r
 
 [IIS_v7](https://www.microsoft.com/en-za/download/details.aspx?id=2299) (or higher) <br />
 
-Storage size: 10GB - 30GB <br />
+Storage size: 10GB - 30GB <br /> 
 
 [.Net_Core_Hosting_Bundle_v2.2.x](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer)
 
@@ -54,12 +54,12 @@ System type: 64-bit Operating System, x64-based processor
 Disk Storage: 500GB will be adequate, 1TB preferred 
 ```
 
-### Setting up the server:
+### Setting up the server
 
 Download and install [SQL_Express_2017](https://www.microsoft.com/en-us/download/details.aspx?id=55994) <br />
 Download and install [SSMS_18.4](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15#download-ssms)
 
-#### Enable Internet Information Services (IIS): 
+#### Enable Internet Information Services (IIS)
 
 Navigate to Server Roles and ensure that Web Server (IIS) and all its dropdowns are selected, then press 'next' <br />
 
@@ -69,10 +69,100 @@ After that you will land on [Security] settings, select all and do the same for 
 
 When prompted to do so, restart the server. 
 
+#### Create your API foder
+
+Navigate to `C:/inetpub/wwwroot/` and make a folder to house your API (we'll call it NCCRD) so that you have a path: `C:/inetpub/wwwroot/NCCRD` <br />
+
+In `C:/inetpub/wwwroot/NCCRD/` make two folders, `Client` and `API`
+
 #### Configure IIS
+
+Open IIS and on the left-hand pane, select your server instance -> sites and delete the default website <br />
+
+Right click on sites and select `add website` <br />
+
+Enter the name of your web app (for the purposes of this walkthrough we'll make it `NCCRD`) and select `default app pool` <br />
+
+Set the physical path to that which you created in the previous step, in this case it will be `C:/inetpub/wwwroot/Client` <br />
+
+Make sure that `start website immediately` is checked
+
+#### Connect your instance
+
+Open SSMS and in the object explorer pane, rightclick on your server and select properties <br />
+
+Allow SQL and Windows Auth <br />
+
+Ensure that `Allow remote connections` is checked <br />
+
+Continue to restarting your server.
 
 
 ## Database
+
+### Restore backup
+
+//TODO we currently only have instructions for building from backup - need to write docs for building DB from scratch
+
+In SQL Server Manager, in the object explorer pane: rightclick on Databases and select `Restore Database...` <br />
+
+Under `Source`, select `Device` and name your DB (in this case we'll call it `NCCRD`) <br />
+
+Under `Destination`, enter the path to your .bak file and click `OK` <br />
+
+To make sure the DB creation was a success, check for data in the DB folder (ie by running a query) <br />
+
+#### Create a new login for your DB
+
+Select username, password and set SQL Auth <br />
+
+Under the option `Map to credentials`, select all server roles <br />
+
+Under `User mapping`, select `YOUR INSTANCE (in this case NCCRD)` select all database permissions <br />
+
+Under `Status`, ensure that `grant and enable login` is selected and run <br />
+
+#### Connect DB in IIS
+
+In IIS, in the Object Explorer pane, navigate to -> `YOUR_INSTANCE` -> `Sites`, rightclick on `YOUR_WEBAPP (in this case NCCRD)` and select `Add Application...` <br />
+
+Set your Alias to `API` and the physical path to the API destination folder (in our case it's `C:/inetpub/wwwroot/NCCRD/API`) <br />
+
+### Build your API
+
+For the purpose of this walkthrough we'll be using Visual Studio, you're welcome to use other tools. 
+
+This walkthrough assumes that you are building from the latest release (in this case the [NCCRD_REPO](https://github.com/SAEONData/NCCRD/releases)) <br />
+
+Download and extract the .zip file and open the solution in Visual Studio <br />
+
+In the API root folder, create a secrets.json file that contains your connection string for SQL, it will look something like this: 
+
+```
+{
+  "ConnectionStrings": {
+    "NCCRD": "Data source=.; initial catalog=NCCRD; user id=YOUR_USER_ID; password=YOUR_USER_PASSWORD;"
+  },
+  "VmsApiBaseUrl": "path/to/VMS/API"
+}
+```
+Build the solution (rightclick on the sln file and run `Build` or pres ctrl + shift + B) <br />
+
+In the solution explorer, rightclick on the project (NCCRD) and click `Publish` <br />
+
+You will now be presented with the Publish wizard where you should set the following configs: <br />
+
+Set defaults to `folder profile` and the `target location` to a folder you can easily locate for copying from <br />
+
+In the next window, set the configuration to `release` and set dev mode to whichever you prefer <br />
+
+Save your settings and publish! <br />
+
+Assuming that everything went smoothly, you will have the API files populated inside the folder you published to, copy all its contents and paste it into the folder on your server that you had previously allocated for your API (in our case it's `C:/inetpub/wwwroot/NCCRD/API`) <br />
+
+
+
+
 
 ## Client
 
