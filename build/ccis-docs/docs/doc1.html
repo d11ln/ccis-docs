@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Start here · The Climate Change Information System Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Welcome!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Start here · The Climate Change Information System Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dcugh.github.io/ccis-docs/"/><meta property="og:description" content="## Welcome!"/><meta property="og:image" content="https://dcugh.github.io/ccis-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://dcugh.github.io/ccis-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/ccis-docs/img/logo_dea.jpg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/ccis-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/ccis-docs/css/main.css"/><script src="/ccis-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/ccis-docs/"><img class="logo" src="/ccis-docs/img/logo_dea.jpg" alt="The Climate Change Information System Documentation"/><h2 class="headerTitleWithLogo">The Climate Change Information System Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/ccis-docs/docs/doc1" target="_self">Docs</a></li><li class=""><a href="/ccis-docs/docs/doc4" target="_self">API</a></li><li class=""><a href="/ccis-docs/doc3" target="_self">Dependencies</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Setup</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/ccis-docs/docs/doc1">start</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Customization</h3><ul class=""><li class="navListItem"><a class="navItem" href="/ccis-docs/docs/doc2">Customise the app</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Second Category</h3><ul class=""><li class="navListItem"><a class="navItem" href="/ccis-docs/docs/doc3">branding</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Start here</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="welcome"></a><a href="#welcome" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Welcome!</h2>
+<p>Welcome to the Climate Change Information System (CCIS). <br />
+The CCIS is a first step towards the development of an open source, standards-based, and integrated portfolio of systems that aims to eliminate duplication of effort, limits multiplication of data sources, and is re-usable on many levels of government in South Africa.</p>
+<p>This document aims to provide a cohesive guide to creating your own instance of the CCIS with its coupled systems (CCRD, DAO - more on that later) and dependencies. For reference, the national, maintained system can be found <a href="https://ccis.environment.gov.za">here.</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="environment"></a><a href="#environment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment</h2>
+<p>If your machine does not already have the following installations, please proceed to install:</p>
+<p><a href="https://nodejs.org/en/download/">Node.js</a> <br />
+<a href="https://www.npmjs.com/">npm</a> <br />
+<a href="https://reactjs.org/">ReactJS</a> <br />
+<a href="https://www.microsoft.com/en-us/download/details.aspx?id=55994">SQL_Express_2017</a> <br />
+<a href="https://www.microsoft.com/en-za/download/details.aspx?id=2299">IIS</a> <br />
+<a href="https://visualstudio.microsoft.com/">Visual_Studio</a> or <a href="https://cmake.org/">CMake</a></p>
+<h2><a class="anchor" aria-hidden="true" id="server-requirements"></a><a href="#server-requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Requirements</h2>
+<p>Database:
+<a href="https://www.microsoft.com/en-za/download/details.aspx?id=22985">SQL_Server_2008_R2</a> (or later) <br /></p>
+<p>Size: up to 10GB per database, times 10 contributing systems - allow for 100GB relational data <br /></p>
+<p><a href="https://www.microsoft.com/en-za/download/details.aspx?id=2299">IIS_v7</a> (or higher) <br /></p>
+<p>Storage size: 10GB - 30GB <br /></p>
+<p><a href="https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer">.Net_Core_Hosting_Bundle_v2.2.x</a></p>
+<h2><a class="anchor" aria-hidden="true" id="server"></a><a href="#server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server</h2>
+<h3><a class="anchor" aria-hidden="true" id="server-specs"></a><a href="#server-specs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Specs</h3>
+<p>Allocate a Windows server with the following specifications: <br /></p>
+<pre><code class="hljs">Windows<span class="hljs-built_in"> Server </span>2016 
+Processor: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz (4 processors) 
+Installed memory (RAM): 16.00GB minimum, more preferred <span class="hljs-built_in">
+System </span>type: 64-bit Operating System, x64-based processor 
+Disk Storage: 500GB will be adequate, 1TB preferred 
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="setting-up-the-server"></a><a href="#setting-up-the-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting up the server</h3>
+<p>Download and install <a href="https://www.microsoft.com/en-us/download/details.aspx?id=55994">SQL_Express_2017</a> <br />
+Download and install <a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15#download-ssms">SSMS_18.4</a></p>
+<h4><a class="anchor" aria-hidden="true" id="enable-internet-information-services-iis"></a><a href="#enable-internet-information-services-iis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable Internet Information Services (IIS)</h4>
+<p>Navigate to Server Roles and ensure that Web Server (IIS) and all its dropdowns are selected, then press 'next' <br /></p>
+<p>In the following window, under Features, select ISS hostable web core as well as .Net Framework (and all dropdowns) <br /></p>
+<p>After that you will land on [Security] settings, select all and do the same for IIS Management Tools and then proceed with installation.</p>
+<p>When prompted to do so, restart the server.</p>
+<h4><a class="anchor" aria-hidden="true" id="create-your-api-foder"></a><a href="#create-your-api-foder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create your API foder</h4>
+<p>Navigate to <code>C:/inetpub/wwwroot/</code> and make a folder to house your API (we'll call it NCCRD) so that you have a path: <code>C:/inetpub/wwwroot/NCCRD</code> <br /></p>
+<p>In <code>C:/inetpub/wwwroot/NCCRD/</code> make two folders, <code>Client</code> and <code>API</code></p>
+<h4><a class="anchor" aria-hidden="true" id="configure-iis"></a><a href="#configure-iis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure IIS</h4>
+<p>Open IIS and on the left-hand pane, select your server instance -&gt; sites and delete the default website <br /></p>
+<p>Right click on sites and select <code>add website</code> <br /></p>
+<p>Enter the name of your web app (for the purposes of this walkthrough we'll make it <code>NCCRD</code>) and select <code>default app pool</code> <br /></p>
+<p>Set the physical path to that which you created in the previous step, in this case it will be <code>C:/inetpub/wwwroot/Client</code> <br /></p>
+<p>Make sure that <code>start website immediately</code> is checked</p>
+<h4><a class="anchor" aria-hidden="true" id="connect-your-instance"></a><a href="#connect-your-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect your instance</h4>
+<p>Open SSMS and in the object explorer pane, rightclick on your server and select properties <br /></p>
+<p>Allow SQL and Windows Auth <br /></p>
+<p>Ensure that <code>Allow remote connections</code> is checked <br /></p>
+<p>Continue to restarting your server.</p>
+<h2><a class="anchor" aria-hidden="true" id="database"></a><a href="#database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Database</h2>
+<h3><a class="anchor" aria-hidden="true" id="restore-backup"></a><a href="#restore-backup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restore backup</h3>
+<p>//TODO we currently only have instructions for building from backup - need to write docs for building DB from scratch</p>
+<p>In SQL Server Manager, in the object explorer pane: rightclick on Databases and select <code>Restore Database...</code> <br /></p>
+<p>Under <code>Source</code>, select <code>Device</code> and name your DB (in this case we'll call it <code>NCCRD</code>) <br /></p>
+<p>Under <code>Destination</code>, enter the path to your .bak file and click <code>OK</code> <br /></p>
+<p>To make sure the DB creation was a success, check for data in the DB folder (ie by running a query) <br /></p>
+<h4><a class="anchor" aria-hidden="true" id="create-a-new-login-for-your-db"></a><a href="#create-a-new-login-for-your-db" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new login for your DB</h4>
+<p>Select username, password and set SQL Auth <br /></p>
+<p>Under the option <code>Map to credentials</code>, select all server roles <br /></p>
+<p>Under <code>User mapping</code>, select <code>YOUR INSTANCE (in this case NCCRD)</code> select all database permissions <br /></p>
+<p>Under <code>Status</code>, ensure that <code>grant and enable login</code> is selected and run <br /></p>
+<h4><a class="anchor" aria-hidden="true" id="connect-db-in-iis"></a><a href="#connect-db-in-iis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect DB in IIS</h4>
+<p>In IIS, in the Object Explorer pane, navigate to -&gt; <code>YOUR_INSTANCE</code> -&gt; <code>Sites</code>, rightclick on <code>YOUR_WEBAPP (in this case NCCRD)</code> and select <code>Add Application...</code> <br /></p>
+<p>Set your Alias to <code>API</code> and the physical path to the API destination folder (in our case it's <code>C:/inetpub/wwwroot/NCCRD/API</code>) <br /></p>
+<h3><a class="anchor" aria-hidden="true" id="build-your-api"></a><a href="#build-your-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build your API</h3>
+<p>For the purpose of this walkthrough we'll be using Visual Studio, you're welcome to use other tools.</p>
+<p>This walkthrough assumes that you are building from the latest release (in this case the <a href="https://github.com/SAEONData/NCCRD/releases">NCCRD_REPO</a>) <br /></p>
+<p>Download and extract the .zip file and open the solution in Visual Studio <br /></p>
+<p>In the API root folder, create a secrets.json file that contains your connection string for SQL, it will look something like this:</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"ConnectionStrings"</span>: {
+    <span class="hljs-attr">"NCCRD"</span>: <span class="hljs-string">"Data source=.; initial catalog=NCCRD; user id=YOUR_USER_ID; password=YOUR_USER_PASSWORD;"</span>
+  },
+  <span class="hljs-attr">"VmsApiBaseUrl"</span>: <span class="hljs-string">"path/to/VMS/API"</span>
+}
+</code></pre>
+<p>Build the solution (rightclick on the sln file and run <code>Build</code> or pres ctrl + shift + B) <br /></p>
+<p>In the solution explorer, rightclick on the project (NCCRD) and click <code>Publish</code> <br /></p>
+<p>You will now be presented with the Publish wizard where you should set the following configs: <br /></p>
+<p>Set defaults to <code>folder profile</code> and the <code>target location</code> to a folder you can easily locate for copying from <br /></p>
+<p>In the next window, set the configuration to <code>release</code> and set dev mode to whichever you prefer <br /></p>
+<p>Save your settings and publish! <br /></p>
+<p>Assuming that everything went smoothly, you will have the API files populated inside the folder you published to, copy all its contents and paste it into the folder on your server that you had previously allocated for your API (in our case it's <code>C:/inetpub/wwwroot/NCCRD/API</code>) <br /></p>
+<h2><a class="anchor" aria-hidden="true" id="client"></a><a href="#client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client</h2>
+<h3><a class="anchor" aria-hidden="true" id="preflight-configuration"></a><a href="#preflight-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preflight configuration</h3>
+<p>Get the source by forking or cloning this <a href="https://github.com/SAEONData/NCCRD.git">repo</a></p>
+<p>Before you run the install and fire up your app you'll need to do some minor configuration to ensure everything is wired up for your instance, please follow the steps below to configure your instance.</p>
+<p>In the App/JS directory, create a file called secrets.js and populate it with the following:</p>
+<pre><code class="hljs">import { ssoBaseURL } <span class="hljs-keyword">from</span> <span class="hljs-string">'./config/serviceURLs.js'</span>
+import { siteBaseURL } <span class="hljs-keyword">from</span> <span class="hljs-string">'./config/serviceURLs.js'</span>
+
+let<span class="hljs-built_in"> config </span>= {
+client_id: <span class="hljs-string">'NCCRD_React_Client'</span>,
+  redirect_uri: `<span class="hljs-variable">${siteBaseURL}</span>#/callback#`,
+  post_logout_redirect_uri: `<span class="hljs-variable">${siteBaseURL}</span>#/logout`,
+  silent_redirect_uri: `<span class="hljs-variable">${siteBaseURL}</span>/silent_renew/silent_renew.html`,
+  response_type: <span class="hljs-string">'id_token token'</span>,
+  scope: <span class="hljs-string">'openid profile email SAEON_NCCRD_Web_API'</span>,
+  authority: ssoBaseURL,
+  automaticSilentRenew: <span class="hljs-literal">true</span>,
+  filterProtocolClaims: <span class="hljs-literal">false</span>,
+  loadUserInfo: <span class="hljs-literal">true</span>,
+  silentRequestTimeout: 30000
+}
+
+<span class="hljs-builtin-name">export</span> const userManagerConfig =<span class="hljs-built_in"> config
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="first-run"></a><a href="#first-run" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>First run</h3>
+<p>cd into the client folder and run:</p>
+<pre><code class="hljs"><span class="hljs-built_in">npm</span> i
+</code></pre>
+<p>This will take care of installing your dependencies.</p>
+<p>You'll want to watch for any warnings in the cli, any references to missing dependencies means that you'll have to install those yourself, for example:</p>
+<pre><code class="hljs">npm WARN @ant-design/icons-react@1.1.2 requires a<span class="hljs-built_in"> peer </span>dependency of @ant-design/icons but none is installed. You must install<span class="hljs-built_in"> peer </span>dependencies yourself. 
+</code></pre>
+<p>In the event that you come across any of these that hinder the installation or rendering of the app, simply run: <code>npm i</code> followed by the relevant dependencies as pointed out by the warnings.</p>
+<p>If all went well and npm installed successfully, you can point your browser to the relevant port where you'll see an instance of the app.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/ccis-docs/docs/doc2"><span>Customise the app</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#welcome">Welcome!</a></li><li><a href="#environment">Environment</a></li><li><a href="#server-requirements">Server Requirements</a></li><li><a href="#server">Server</a><ul class="toc-headings"><li><a href="#server-specs">Server Specs</a></li><li><a href="#setting-up-the-server">Setting up the server</a></li></ul></li><li><a href="#database">Database</a><ul class="toc-headings"><li><a href="#restore-backup">Restore backup</a></li><li><a href="#build-your-api">Build your API</a></li></ul></li><li><a href="#client">Client</a><ul class="toc-headings"><li><a href="#preflight-configuration">Preflight configuration</a></li><li><a href="#first-run">First run</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/ccis-docs/" class="nav-home"></a><div><h5>Docs</h5><a href="/ccis-docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/ccis-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/ccis-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/ccis-docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/ccis-docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/ccis-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 SAEON</section></footer></div></body></html>
