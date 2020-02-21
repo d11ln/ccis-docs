@@ -5,6 +5,12 @@
     "previous": "Previous",
     "tagline": "Home of the official docs for the CCIS",
     "docs": {
+      "api": {
+        "title": "API"
+      },
+      "dependencies": {
+        "title": "Dependencies"
+      },
       "doc1": {
         "title": "Start here",
         "sidebar_label": "start"
@@ -17,10 +23,7 @@
         "sidebar_label": "branding"
       },
       "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+        "title": "Credentials"
       }
     },
     "links": {
@@ -31,7 +34,6 @@
     "categories": {
       "Setup": "Setup",
       "Customization": "Customization",
-      "Second Category": "Second Category",
       "First Category": "First Category"
     }
   },
