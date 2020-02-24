@@ -57,7 +57,7 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Start here</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="welcome"></a><a href="#welcome" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Welcome!</h2>
 <p>Welcome to the National Climate Change Information System (NCCIS). <br /></p>
 <p>The NCCIS is a first step towards the development of an open source, standards-based, and integrated portfolio of systems that aims to eliminate duplication of effort, limits multiplication of data sources, and is reusable on many levels of government in South Africa.</p>
-<p>This document aims to provide a cohesive guide to creating your own instance of the NCCIS with its coupled systems (NCCRD, NDAO - more on that later) and dependencies. For reference, the national, maintained system can be found <a href="https://ccis.environment.gov.za">here</a>.</p>
+<p>This document aims to provide a cohesive guide to creating your own instance of the NCCIS with its coupled systems (NCCRD, NDAO, CSA - more on that later) and dependencies. For reference, the national, maintained system can be found <a href="https://ccis.environment.gov.za">here</a>.</p>
 <p>The tech stack used for this system: <a href="https://docs.microsoft.com/en-us/dotnet/csharp/">C#</a> for the API, <a href="https://reactjs.org/">ReactJS</a> for the client and <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">MS SQL</a> for the database.</p>
 <h2><a class="anchor" aria-hidden="true" id="environment"></a><a href="#environment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Environment</h2>
 <p>Please make sure you have the following installations on your machine:</p>
@@ -98,6 +98,9 @@ Download and install <a href="https://docs.microsoft.com/en-us/sql/ssms/download
 <li>click <code>Install</code> to proceed.</li>
 </ul>
 <p>When prompted to do so, restart the server.</p>
+<h4><a class="anchor" aria-hidden="true" id="create-your-api-folder"></a><a href="#create-your-api-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create your API folder</h4>
+<p>Navigate to <code>C:\inetpub\wwwroot\</code> and make a folder to house your API (we'll call it NCCRD) so that you have the path: <code>C:\inetpub\wwwroot\NCCRD\</code> <br /></p>
+<p>In <code>C:\inetpub\wwwroot\NCCRD\</code> make two folders, <code>Client</code> and <code>API</code></p>
 <h3><a class="anchor" aria-hidden="true" id="build-your-api"></a><a href="#build-your-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build your API</h3>
 <p>For the purpose of this walkthrough we'll be using Visual Studio, you're welcome to use other tools.</p>
 <p>This walkthrough assumes that you are building from the latest release (in this case the <a href="https://github.com/SAEONData/NCCRD/releases">NCCRD repo</a>) <br /></p>
@@ -126,19 +129,16 @@ Download and install <a href="https://docs.microsoft.com/en-us/sql/ssms/download
 </ul></li>
 </ul>
 <p>Save your settings and publish! <br /></p>
-<p>Assuming that everything went smoothly, you will have the API files populated inside the folder you published to, copy all its contents and paste it into the folder on your server that you had previously allocated for your API (in our case it's <code>C:\inetpub\wwwroot\NCCRD\API</code>) <br /></p>
-<h4><a class="anchor" aria-hidden="true" id="create-your-api-folder"></a><a href="#create-your-api-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create your API folder</h4>
-<p>Navigate to <code>C:\inetpub\wwwroot\</code> and make a folder to house your API (we'll call it NCCRD) so that you have the path: <code>C:\inetpub\wwwroot\NCCRD\</code> <br /></p>
-<p>In <code>C:\inetpub\wwwroot\NCCRD\</code> make two folders, <code>Client</code> and <code>API</code></p>
+<p>You will now have the API files populated inside the folder you published to, copy all its contents and paste it into the folder on your server that you had previously allocated for your API (in our case it's <code>C:\inetpub\wwwroot\NCCRD\API</code>) <br /></p>
 <h4><a class="anchor" aria-hidden="true" id="configure-iis"></a><a href="#configure-iis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure IIS</h4>
-<p>Open IIS and on the <code>Connections</code> pane:</p>
+<p>Open IIS and in the <code>Connections</code> pane:</p>
 <ul>
 <li>expand your server instance</li>
 <li>expand <code>Sites</code></li>
 <li>if there is a default site, rightclick on it and delete it</li>
 <li>then rightclick on <code>Sites</code> and select <code>Add Website</code></li>
 </ul>
-<p>This will open the Add Website wizard:</p>
+<p>This will open the <code>Add Website</code> wizard:</p>
 <ul>
 <li>Under <code>Site name</code> enter the name of your web app (for the purpose of this walkthrough we'll call it <code>NCCIS</code>, this will be the main app from which the other apps branch off)</li>
 <li>Under <code>Application pool</code> make sure <code>DefaultAppPool</code> is selected</li>
@@ -196,4 +196,50 @@ client_id: <span class="hljs-string">'NCCRD_React_Client'</span>,
 </code></pre>
 <p>In the event that you come across any of these that hinder the installation or rendering of the app, simply run: <code>npm i</code> followed by the relevant dependencies as pointed out by the warnings.</p>
 <p>If all went well and npm installed successfully, you can point your browser to the relevant port where you'll see an instance of the app.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/ccis-docs/docs/doc2"><span>Customise the app</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#welcome">Welcome!</a></li><li><a href="#environment">Environment</a></li><li><a href="#server-requirements">Server Requirements</a></li><li><a href="#server">Server</a><ul class="toc-headings"><li><a href="#server-specs">Server Specs</a></li><li><a href="#setting-up-the-server">Setting up the server</a></li><li><a href="#build-your-api">Build your API</a></li></ul></li><li><a href="#database">Database</a><ul class="toc-headings"><li><a href="#restore-backup">Restore backup</a></li></ul></li><li><a href="#client">Client</a><ul class="toc-headings"><li><a href="#preflight-configuration">Preflight configuration</a></li><li><a href="#first-run">First run</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 SAEON</section></footer></div></body></html>
+<h3><a class="anchor" aria-hidden="true" id="compile-the-client"></a><a href="#compile-the-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile the client</h3>
+<p>Before you build your client, you'll want to configure the URLs and secrets file to match your requirements:</p>
+<ul>
+<li>Setup your secrets.js file as per previous step, if you have not done so already</li>
+<li>Set your URLs in app\js\config\serviceURLs.js so that the following reflects your configuration:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-keyword">if</span> (CONSTANTS.DEV) {
+ <span class="hljs-variable">_apiBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/api/odata/'</span>
+ <span class="hljs-variable">_siteBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/'</span>
+ <span class="hljs-variable">_ndaoBaseURL</span> = <span class="hljs-string">'your/dns/ndao/api/odata/'</span>
+ <span class="hljs-variable">_ndaoSiteBaseURL</span> = <span class="hljs-string">'your/dns/ndao/'</span>
+ <span class="hljs-variable">_vmsBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/vms/api/'</span>
+ <span class="hljs-variable">_ssoBaseURL</span> = <span class="hljs-string">'https://identity.saeon.ac.za/'</span>
+ <span class="hljs-variable">_mapServerBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/map'</span>
+}
+
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (CONSTANTS.TEST) {
+ <span class="hljs-variable">_apiBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/api/odata/'</span>
+ <span class="hljs-variable">_siteBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/'</span>
+ <span class="hljs-variable">_ndaoBaseURL</span> = <span class="hljs-string">'your/dns/ndao/api/odata/'</span>
+ <span class="hljs-variable">_ndaoSiteBaseURL</span> = <span class="hljs-string">'your/dns/ndao/'</span>
+ <span class="hljs-variable">_vmsBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/vms/api/'</span>
+ <span class="hljs-variable">_ssoBaseURL</span> = <span class="hljs-string">'https://identity.saeon.ac.za/'</span>
+ <span class="hljs-variable">_mapServerBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/map'</span>
+}
+
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (CONSTANTS.PROD) {
+ <span class="hljs-variable">_apiBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/api/odata/'</span>
+ <span class="hljs-variable">_siteBaseURL</span> = <span class="hljs-string">'your/dns/nccrd/'</span>
+ <span class="hljs-variable">_ndaoBaseURL</span> = <span class="hljs-string">'your/dns/ndao/api/odata/'</span>
+ <span class="hljs-variable">_ndaoSiteBaseURL</span> = <span class="hljs-string">'your/dns/ndao/'</span>
+ <span class="hljs-variable">_vmsBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/vms/api/'</span>
+ <span class="hljs-variable">_ssoBaseURL</span> = <span class="hljs-string">'https://identity.saeon.ac.za/'</span>
+ <span class="hljs-variable">_mapServerBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/map'</span>
+}
+
+
+</code></pre>
+<ul>
+<li>in your cli, run the command <code>npm run build-prod</code></li>
+<li>there will now be a <code>dist</code> folder in the root directory of your client</li>
+<li>copy the contents of <code>dist</code> into the client folder allocated on your server
+(in this case it's <code>C:\inetpub\wwwroot\NCCRD\Client</code>)</li>
+</ul>
+<p>Now, if you point your browser to your app (<code>your/dns/nccrd/</code>), you should be up and running!</p>
+<p>To add the NDAO and the CSA, follow the same steps you did to setup the NCCRD (both for the client and API instances)</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/ccis-docs/docs/doc2"><span>Customise the app</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#welcome">Welcome!</a></li><li><a href="#environment">Environment</a></li><li><a href="#server-requirements">Server Requirements</a></li><li><a href="#server">Server</a><ul class="toc-headings"><li><a href="#server-specs">Server Specs</a></li><li><a href="#setting-up-the-server">Setting up the server</a></li><li><a href="#build-your-api">Build your API</a></li></ul></li><li><a href="#database">Database</a><ul class="toc-headings"><li><a href="#restore-backup">Restore backup</a></li></ul></li><li><a href="#client">Client</a><ul class="toc-headings"><li><a href="#preflight-configuration">Preflight configuration</a></li><li><a href="#first-run">First run</a></li><li><a href="#compile-the-client">Compile the client</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 SAEON</section></footer></div></body></html>
