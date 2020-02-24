@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+node_modules
+=======
+.DS_Store
+
+node_modules
+
+lib/core/metadata.js
+lib/core/MetadataBlog.js
+
+website/translated_docs
+website/build/
+website/yarn.lock
+website/node_modules
+website/i18n/*
+>>>>>>> 80b98d51f0d5c20ea2b467f53e765e562adb1728

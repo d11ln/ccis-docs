@@ -153,15 +153,24 @@ Download and install <a href="https://docs.microsoft.com/en-us/sql/ssms/download
 <p>Continue to restarting your server.</p>
 <h2><a class="anchor" aria-hidden="true" id="database"></a><a href="#database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Database</h2>
 <h3><a class="anchor" aria-hidden="true" id="restore-backup"></a><a href="#restore-backup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restore backup</h3>
-<p>In SQL Server Manager, in the object explorer pane: rightclick on Databases and select <code>Restore Database...</code> <br /></p>
-<p>Under <code>Source</code>, select <code>Device</code> and name your DB (in this case we'll call it <code>NCCRD</code>) <br /></p>
-<p>Under <code>Destination</code>, enter the path to your .bak file and click <code>OK</code> <br /></p>
+<p>In SQL Server Manager, in the object explorer pane:</p>
+<ul>
+<li>rightclick on Databases and select <code>Restore Database...</code></li>
+<li>under <code>Source</code>, select <code>Device</code></li>
+<li>name your DB (in this case we'll call it <code>NCCRD</code>)</li>
+<li>under <code>Destination</code>, enter the path to your .bak file and click <code>OK</code></li>
+</ul>
 <p>To make sure the DB creation was a success, check for data in the DB folder (ie by running a query) <br /></p>
 <h4><a class="anchor" aria-hidden="true" id="create-a-new-login-for-your-db"></a><a href="#create-a-new-login-for-your-db" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new login for your DB</h4>
-<p>Select username, password and set SQL Auth <br /></p>
-<p>Under the option <code>Map to credentials</code>, select all server roles <br /></p>
-<p>Under <code>User mapping</code>, select <code>YOUR INSTANCE (in this case NCCRD)</code> select all database permissions <br /></p>
-<p>Under <code>Status</code>, ensure that <code>grant and enable login</code> is selected and run <br /></p>
+<p>If, for some reason, you need to create a new user for your database, do the following:</p>
+<ul>
+<li>select username, password and set SQL Auth</li>
+<li>under the option <code>Map to credentials</code>, select <code>all server roles</code></li>
+<li>under <code>User mapping</code>, select <code>&lt;your instance name&gt; (in this case NCCRD)</code></li>
+<li>select all database permissions</li>
+<li>under <code>Status</code>, ensure that <code>grant and enable login</code> is selected</li>
+<li>click run</li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="client"></a><a href="#client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client</h2>
 <h3><a class="anchor" aria-hidden="true" id="preflight-configuration"></a><a href="#preflight-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preflight configuration</h3>
 <p>Get the source by forking or cloning this <a href="https://github.com/SAEONData/NCCRD.git">repo</a></p>
@@ -231,8 +240,6 @@ client_id: <span class="hljs-string">'NCCRD_React_Client'</span>,
  <span class="hljs-variable">_ssoBaseURL</span> = <span class="hljs-string">'https://identity.saeon.ac.za/'</span>
  <span class="hljs-variable">_mapServerBaseURL</span> = <span class="hljs-string">'https://ccis.environment.gov.za/map'</span>
 }
-
-
 </code></pre>
 <ul>
 <li>in your cli, run the command <code>npm run build-prod</code></li>
@@ -241,5 +248,5 @@ client_id: <span class="hljs-string">'NCCRD_React_Client'</span>,
 (in this case it's <code>C:\inetpub\wwwroot\NCCRD\Client</code>)</li>
 </ul>
 <p>Now, if you point your browser to your app (<code>your/dns/nccrd/</code>), you should be up and running!</p>
-<p>To add the NDAO and the CSA, follow the same steps you did to setup the NCCRD (both for the client and API instances)</p>
+<p>To add the NDAO and the CSA, follow the same steps you did to setup the NCCRD (both for the client and API instances).</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/ccis-docs/docs/doc2"><span>Customise the app</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#welcome">Welcome!</a></li><li><a href="#environment">Environment</a></li><li><a href="#server-requirements">Server Requirements</a></li><li><a href="#server">Server</a><ul class="toc-headings"><li><a href="#server-specs">Server Specs</a></li><li><a href="#setting-up-the-server">Setting up the server</a></li><li><a href="#build-your-api">Build your API</a></li></ul></li><li><a href="#database">Database</a><ul class="toc-headings"><li><a href="#restore-backup">Restore backup</a></li></ul></li><li><a href="#client">Client</a><ul class="toc-headings"><li><a href="#preflight-configuration">Preflight configuration</a></li><li><a href="#first-run">First run</a></li><li><a href="#compile-the-client">Compile the client</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2020 SAEON</section></footer></div></body></html>

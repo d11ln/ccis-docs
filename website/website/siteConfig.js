@@ -20,24 +20,8 @@ const users = [
   },
 ];
 
-// const siteConfig = {
-//   title: 'The Climate Change Information System Documentation', // Title for your website.
-//   tagline: 'Home of the official docs for the CCIS',
-//   url: 'https://ccis.environment.gov.za', // Your website URL
-//   baseUrl: '/', // Base URL for your project */
-//   // For github.io type URLs, you would set the url and baseUrl like:
-//   //   url: 'https://facebook.github.io',
-//   //   baseUrl: '/test-site/',
-
-//   // Used for publishing and more
-//   projectName: 'CCIS',
-//   organizationName: 'SAEON',
-//   // For top-level user or org sites, the organization is still the same.
-//   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-//   //   organizationName: 'JoelMarcey'
-
 const siteConfig = {
-  title: 'The National Climate Change Information System Documentation', // Title for your website.
+  title: 'The Climate Change Information System Documentation', // Title for your website.
   tagline: 'Home of the official docs for the CCIS',
   url: 'https://dcugh.github.io', // Your website URL
   baseUrl: '/ccis-docs/', // Base URL for your project */
@@ -55,14 +39,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-<<<<<<< HEAD
-    {doc: 'api', label: 'API'},
-    {doc: 'dependencies', label: 'Dependencies'},
-=======
+    {doc: 'setup', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
-    {doc: 'doc3', label: 'Dependencies'},
->>>>>>> 28a82776b1b255135d2a3135e1c6d454c18e6212
+    {page: 'doc3', label: 'Dependencies'},
     // {blog: true, label: 'Changelog'},
   ],
 
@@ -99,7 +78,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'dark',
+    theme: 'default',
   },
 
   // Add custom scripts here that would be placed in <script> tags.
