@@ -37,7 +37,7 @@ const users = [
 //   //   organizationName: 'JoelMarcey'
 
 const siteConfig = {
-  title: 'The Climate Change Information System Documentation', // Title for your website.
+  title: 'The National Climate Change Information System Documentation', // Title for your website.
   tagline: 'Home of the official docs for the CCIS',
   url: 'https://dcugh.github.io', // Your website URL
   baseUrl: '/ccis-docs/', // Base URL for your project */
