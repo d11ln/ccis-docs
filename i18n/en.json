@@ -32,9 +32,9 @@
       "Dependencies": "Dependencies"
     },
     "categories": {
-      "Setup": "Setup",
-      "Customization": "Customization",
-      "First Category": "First Category"
+      "First Category": "First Category",
+      "Docs": "Docs",
+      "Customization": "Customization"
     }
   },
   "pages-strings": {
