@@ -20,8 +20,24 @@ const users = [
   },
 ];
 
+// const siteConfig = {
+//   title: 'The Climate Change Information System Documentation', // Title for your website.
+//   tagline: 'Home of the official docs for the CCIS',
+//   url: 'https://ccis.environment.gov.za', // Your website URL
+//   baseUrl: '/', // Base URL for your project */
+//   // For github.io type URLs, you would set the url and baseUrl like:
+//   //   url: 'https://facebook.github.io',
+//   //   baseUrl: '/test-site/',
+
+//   // Used for publishing and more
+//   projectName: 'CCIS',
+//   organizationName: 'SAEON',
+//   // For top-level user or org sites, the organization is still the same.
+//   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
+//   //   organizationName: 'JoelMarcey'
+
 const siteConfig = {
-  title: 'The Climate Change Information System Documentation', // Title for your website.
+  title: 'The National Climate Change Information System Documentation', // Title for your website.
   tagline: 'Home of the official docs for the CCIS',
   url: 'https://saeondata.github.io', // Your website URL
   baseUrl: '/nccrd/', // Base URL for your project */
@@ -78,7 +94,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'dark',
   },
 
   // Add custom scripts here that would be placed in <script> tags.
