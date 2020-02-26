@@ -1,14 +1,8 @@
 {
   "docs": {
-
-
-    "First Category": ["doc2", "doc3"],
-    
-
     "Docs": ["doc1"],
-
-    "Customization": ["doc2", "doc3"]
-
+    "Customization": ["doc2"],
+    "Second Category": ["doc3"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]

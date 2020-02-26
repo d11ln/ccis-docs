@@ -32,9 +32,10 @@
       "Dependencies": "Dependencies"
     },
     "categories": {
-      "First Category": "First Category",
       "Docs": "Docs",
-      "Customization": "Customization"
+      "Customization": "Customization",
+      "Second Category": "Second Category",
+      "First Category": "First Category"
     }
   },
   "pages-strings": {
