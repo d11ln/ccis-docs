@@ -52,12 +52,14 @@ const siteConfig = {
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
+
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'doc1', label: 'Docs'},
     {doc: 'api', label: 'API'},
     {doc: 'dependencies', label: 'Dependencies'},
     // {blog: true, label: 'Changelog'}, 
+    // {blog: true, label: 'Changelog'},
   ],
 
   // If you have users set above, you add it here:

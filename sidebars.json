@@ -2,7 +2,11 @@
   "docs": {
     "Setup": ["doc1"],
     "Customization": ["doc2", "doc3"]
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 2f041c007b2d4db80f47abf083bd016410cc98de
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
