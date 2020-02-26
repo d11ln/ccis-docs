@@ -5,9 +5,9 @@
     "First Category": ["doc2", "doc3"],
     
 
-    "Setup": ["doc1"],
+    "Docs": ["doc1"],
 
-    "Customization": ["doc2", "doc3"],
+    "Customization": ["doc2", "doc3"]
 
   },
   "docs-other": {
