@@ -14,8 +14,14 @@ The NCCIS is a first step towards the development of an open source, standards-b
 
 This document aims to provide a cohesive guide to creating your own instance of the NCCIS with its coupled systems (NCCRD, NDAO, CSA - more on that later) and dependencies. For reference, the national, maintained system can be found [here](https://ccis.environment.gov.za). 
 
-The tech stack used for this system: [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) for the API, [ReactJS](https://reactjs.org/) for the client and [MS SQL](https://www.microsoft.com/en-us/sql-server/sql-server-2019) for the database.
+The systems are stored in four separate repos in version control: 
 
+[NCCIS](https://github.com/saeondata/nccis)<br />
+[NCCRD](https://github.com/saeondata/nccrd)<br />
+[NDAO](https://github.com/saeondata/ndao)<br />
+[CSA](https://github.com/saeondata/carbon-sinks-atlas)<br />
+
+The tech stack used for this system: [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) for the API, [ReactJS](https://reactjs.org/) for the client and [MS SQL](https://www.microsoft.com/en-us/sql-server/sql-server-2019) for the database.
 
 
 ## Environment
@@ -139,7 +145,7 @@ Allow SQL and Windows Auth <br />
 
 Ensure that `Allow remote connections` is checked <br />
 
-Continue to restarting your server.
+Continue by restarting your server.
 
 ## Database
 

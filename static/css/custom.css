@@ -14,3 +14,9 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+.fixedHeaderContainer{background:#303030;color:#303030;}
+
+.headerTitleWithLogo{color: #8eac85;}
+
+.siteNav{color: #8eac85; background: #fff;}

@@ -40,13 +40,13 @@ const siteConfig = {
   title: 'The National Climate Change Information System Documentation', // Title for your website.
   tagline: 'Home of the official docs for the CCIS',
   url: 'https://saeondata.github.io', // Your website URL
-  baseUrl: '/nccrd/', // Base URL for your project */
+  baseUrl: '/nccis-docs/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'nccrd',
+  projectName: 'nccis-docs',
   organizationName: 'saeondata',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
